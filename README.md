@@ -1,1 +1,1 @@
-# proyecto-de-dise-o
+# proyecto-de- diseño
