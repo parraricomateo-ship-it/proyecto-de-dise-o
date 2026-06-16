@@ -1,0 +1,612 @@
+/* El "*" es un selector universal es decir que aplica a todo el documento
+box-sizing: border-box esto es para que no se cambien las dimensiones */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    
+    text-align: center;
+    margin-top: 10px;
+}
+
+ul {
+    display: flex;
+    gap: 70px;
+    list-style: none;
+    justify-content: center;
+    margin-top: 12.5px;
+}
+
+a {
+    /* Estto se hace para quitar el subrayado de los a del navbar */
+    text-decoration: none;
+}
+
+#bienvenida{
+    text-align: center; 
+    padding: 10px 10px; 
+}
+
+#bienvenida h2{
+    font-size: 3rem; /* Aumenta el tamaño del título*/
+    margin-bottom: 3px ; /* Reduce el espacio que viene por defecto debajo del h2 para que no quede tan lejos del párrafo */
+} 
+
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    
+}
+
+#buscador form {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el input y el botón en el centro */
+    justify-content: center; /* Opcional: centra todo el bloque de búsqueda en la pantalla */
+    gap: 10px;           /* Separa el input del botón por 10px */
+    margin-top: 15px;    /* Separa el buscador del texto de arriba (por ejemplo, de la bienvenida) */
+}
+
+/* 2. El INPUT (Buscador) */
+#inputpais {
+    width: 350px;        /* Tu ancho deseado */
+    padding: 8px 12px;   /* Un poco más de padding arriba/abajo y a los lados para que se vea más amplio */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Un borde suave para que se defina bien */
+    outline: none;       /* Quita el borde feo por defecto al hacer clic */
+    box-sizing: border-box;
+}
+
+/* 3. El BOTÓN */
+#botonbuscar {
+    width: 80px;         /* Tu ancho deseado */
+    padding: 8px;        /* Mismo padding vertical que el input para que midan exactamente lo mismo de alto */
+    border-radius: 10px; /* Bordes redondeados */
+    border: none;        /* Quita el borde por defecto del botón */
+    background-color: #007BFF; /* Un color azul de ejemplo (puedes cambiarlo) */
+    color: white;        /* Texto blanco */
+    cursor: pointer;    /* Hace que aparezca la manito al pasar el mouse */
+    box-sizing: border-box; /* esto hace q8e los elementos no se descuadren por el navegador*/
+    transition: transform 0.3s; /* Efecto suave al pasar el mouse */
+}
+
+#botonbuscar:hover { /*el hover es para que cuado se pase el mause se ponga mas oscuro*/
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+nav a{
+    color: black;
+}
+
+nav a:hover{
+    color: #66a8ff;
+}
+
+nav ul{
+    justify-content: center;
+    gap: 30px;
+}
+/*----------- */
+#dashboard{
+    display: flex;
+    gap: 25px; /*Esto es el espacio o separacion en el medio de los elementos */
+    margin-top: 10px;
+    justify-content: center;
+}
+
+#resultados{
+    margin-top: 15px;
+}
+
+/* aca le estamos dando estilos a las tarjetas */
+
+/* el #dahsboard organiza las tarjetas y el .cardDashboard da estilo a cada tarjeta */
+
+/* El # se usa cuando el elemento tiene id y el punto (.) cuando cuando el elemento tiene un atributo class*/
+
+.cardDashboard{
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 220px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s; /* esto se hace para crear animaciones suaves */
+}
+
+/* Esto es para que cuando pase el mause por encima se levante un poquito*/
+.cardDashboard:hover{
+    transform: translateY(-5px);
+}
+
+.tituloDashboard{
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+
+}
+
+.cardDashboard h2{
+    font-size: 2.2rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: bold;
+}
+
+.cardDashboard span{
+    color: gray;
+    font-size: 0.9rem;
+}
+
+/* Mostrar favoritos*/
+#favoritosContainer{
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+#listaFavoritos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    list-style: none;
+}
+
+#listaFavoritos li{
+    background-color: #f5f7fa;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+#listaFavoritos button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+
+/* Parte de la informacion principal*/
+#info-principal{
+    display: flex;
+    gap: 50px; 
+    justify-content: center;
+}
+
+#panelpais,
+#clima{
+    background-color: white;
+    padding: 20px; /*espacio interno */
+    border-radius: 10px;
+    min-height: 180px; /*altura minima */
+    width: 320px;
+    text-align: center;
+    
+}
+
+#panelpais.activo,
+#clima.activo{
+    min-height: 420px;
+}
+
+#contenidoPais{
+    display: none;
+}
+
+#mensajePais{
+    margin-top: 50px;
+    color: gray;
+}
+
+#contenidoClima{
+    display: none;
+}
+
+#mensajeClima{
+    margin-top: 50px;
+    color: gray;
+}
+
+#banderaPais{
+    width: 100%; /* ancho */
+    height: 180px; /*altura*/
+    object-fit: cover; /* llena todo el espacio disponible de las proporciones que te di, ninguna foto se va a deformar */
+    border-radius: 10px; /* bordes suaves */
+    margin-bottom: 15px;
+
+}
+
+#nombrePais {
+      font-size: 2rem; /* tamaño de la letra el rem es el doble del tamaño base */
+    font-weight: bold; /* grosor de la letra */
+    margin-bottom: 10px; /* espacio de abajo, */
+}
+
+#panelpais p{
+    margin-bottom: 8px;
+    text-align: left;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+#temperatura{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#estadoclima{
+    font-size: 1.2rem;
+    color: #665;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+}
+
+#humedad, #viento{
+    margin-top: 10px;
+}
+
+#botonFavorito{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+    box-sizing: border-box;
+}
+
+#botonFavorito:hover{
+     background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+#conversor{
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+#conversor input,
+#conversor select{
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#conversor button{
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+#conversor button:hover{
+    background-color: #0056b3;
+}
+
+#resultadoConversion{
+    font-size: 1.1rem;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#atracciones{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 300px;
+    margin-top: 15px;
+}
+
+#listaAtracciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.atraccion-card {
+    display: flex;
+    gap: 10px;
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.atraccion-card:hover {
+    transform: scale(1.02);
+}
+
+.atraccion-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: #f0f0f0;
+}
+
+.info-atraccion h4 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.ubicacion,
+.categoria,
+.popularidad{
+    margin: 4px 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.info-atraccion h4{
+    margin-bottom: 8px;
+}
+
+#atraccionesFavoritasContainer{
+
+    margin-top: 30px;
+
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+}
+
+#listaAtraccionesFavoritas{
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+#listaAtraccionesFavoritas li{
+
+    background-color: #f8f9fa;
+
+    margin-bottom: 15px;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    border-left: 5px solid #ff4d6d;
+
+}
+
+#listaAtraccionesFavoritas button{
+
+    margin-top: 10px;
+
+    border: none;
+
+    background-color: crimson;
+
+    color: white;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+#listaAtraccionesFavoritas button:hover{
+    transform: scale(1.05);
+}
+
+.cardDashboard,
+#panelpais,
+#clima,
+#conversor,
+#atracciones,
+#favoritosContainer,
+#atraccionesFavoritasContainer{
+    transition: all 0.3s ease;
+}
+
+.cardDashboard:hover,
+#panelpais:hover,
+#clima:hover,
+#conversor:hover,
+#atracciones:hover{
+
+    transform: translateY(-5px);
+
+}
+
+.dark-mode{
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode nav a{
+    color: white;
+}
+
+.dark-mode nav a:hover{
+    color: #ffd166;
+}
+
+.dark-mode .cardDashboard,
+.dark-mode #panelpais,
+.dark-mode #clima,
+.dark-mode #conversor,
+.dark-mode #atracciones,
+.dark-mode #favoritosContainer,
+.dark-mode #atraccionesFavoritasContainer{
+
+    background-color: #1e1e1e;
+    color: white;
+
+}
+
+.dark-mode input{
+
+    background-color: #2b2b2b;
+    color: white;
+    border: 1px solid #444;
+
+}
+
+.dark-mode .atraccion-card{
+
+    background-color: #1e1e1e;
+
+    color: white;
+
+}
+
+.dark-mode .categoria,
+.dark-mode .ubicacion,
+.dark-mode .popularidad{
+
+    color: #d1d1d1;
+
+}
+
+.dark-mode .listaAtraccionesFavoritas{
+    
+    color: #d1d1d1;
+}
+
+.dark-mode #listaFavoritos li,
+.dark-mode #listaAtraccionesFavoritas li{
+
+    background-color: #2a2a2a;
+
+    color: white;
+
+}
+
+html{
+
+    scroll-behavior: smooth;
+
+}
+
+#loginContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#loginCard{
+    width: 350px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+#loginCard input{
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+#loginCard button{
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #6c63ff;
+    color: white;
+}
+
+#loginCard h2{
+    margin-bottom: 10px;
+}
+
+#historialContainer{
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#listaHistorial{
+    list-style: none;
+    padding: 0;
+}
+
+#listaHistorial li{
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.dark-mode #historialContainer{
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode #listaHistorial li{
+    background-color: #2a2a2a;
+    color: white;
+}
+
+.nombreUsuario{ 
+    color: #ffb703;
+    font-weight: bold;
+}
+
+@media (max-width:768px){
+    #conversor{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width:768px){
+    .tituloPrincipal{
+        font-size: 2.5rem;
+    }
+}
