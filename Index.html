@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner Pro</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+    
+</head>
+<body>
+    <header>
+        <!-- Logo y nombre -->
+         <h1>✈ Travel Planner Pro</h1>
+    </header>
+
+    <!--Enlaces de navegación-->
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#atraccionesFavoritasContainer">Favoritos</a></li>
+            <li><a href="#historialContainer">Historial</a></li>
+            <li><a href="#" id="btnTema">🌙</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!--BIENVENIDA-->
+        <section id="bienvenida">
+            <h1 id="saludoUsuario"></h1>
+            <h2>Descubre tu Próximo Destino</h2>
+            <p>Explora guías detalladas, clima en tiempo real y convierte divisas al instante.</p>
+        </section>
+        
+        <!--BUSCADOR-->
+        <section id="buscador">
+            <form action="buscador" method="get">
+                <input type="text" id="inputpais" placeholder="🔎 ¿A que país deseas viajar hoy? ">
+                <button id="botonbuscar" >Explorar</button>
+             </form>
+        </section>
+        
+       <!--DASHBOARD-->
+       <section id="dashboard">
+            <div class="cardDashboard">
+                <p class="tituloDashboard">
+                    🕘 Historial
+                </p>
+                <h2 id="totalpaises">0</h2>
+                <span>Países consultados</span>
+            </div>
+
+            <div class="cardDashboard">
+                <p class="tituloDashboard">
+                    ⭐ Favoritos
+                </p>
+                <h2 id="totalfavoritos">0</h2>
+                <span>Países guardados</span>
+            </div>
+
+            <div class="cardDashboard">
+                <p class="tituloDashboard">
+                    ❤️ Atracciones
+                </p>
+                <h2 id="totalatraccionesfav">0</h2>
+                <span>Atracciones favoritas</span>
+            </div>
+        </section>
+
+       
+
+         <!--Resultados de la busqueda-->
+         <section id="resultados">
+            <!--Aca se dividió para que el pais y el clima esten juntos -->
+            <div id="info-principal">
+                <div id="panelpais">
+                   <h2>🌎 País Buscado</h2>
+
+                    <p id="mensajePais">
+                        🌎 Busca un país para ver su información
+                    </p>
+
+                    <div id="contenidoPais">
+                    <div id="headerpais">
+                        <br>
+                    <img id="banderaPais">
+                    <h2 id="nombrePais"></h2>
+                     </div>
+
+                    <p id="capitalPais"></p>
+                    <p id="poblacionPais"></p>
+                    <p id="monedaPais"></p>
+                    <p id="regionPais"></p>
+                    <p id="idiomaPais"></p>
+                        <br>
+
+                    <button id="botonFavorito">
+                        ⭐ Agregar a favoritos
+                    </button>
+                    </div>
+                </div>
+            
+                <div id="clima">
+                    <h2>🌤 Clima Actual</h2>
+                    <p id="mensajeClima">
+                        🌤 Busca un país para ver el clima
+                    </p>
+
+                <div id="contenidoClima">
+                    <p id="temperatura"></p>
+                    <p id="estadoClima"></p>
+                    <p id="humedad"></p>
+                    <p id="viento"></p>
+                </div>
+                </div>
+            </div>
+
+            
+            <div id="conversor">
+                <h2>Conversor de moneda</h2>
+                    <br>
+                <input 
+                    type="text"
+                    id="cantidad" 
+                    placeholder="Ingrese cantidad"> <!--type es para decirle al navegador si es texto o numeros-->
+
+                    <br><br>
+               
+                    <select id="monedaOrigen">
+                    <option value="COP">COP</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                </select>
+
+                <select id="monedaDestino">
+                    <option value="COP">COP</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="JPY">JPY</option>
+                </select>
+
+                <br><br>
+       
+                <button id="botonConvertir">Convertir</button>
+                <p id="resultadoConversion"></p>
+            </div>
+
+            <section id="atracciones">
+                <h2>Atracciones</h2>
+                <div id="listaAtracciones">
+                    
+                </div>
+            </section>
+
+        </section>
+         <section id="favoritosContainer">
+            <h2>⭐ Mis Favoritos</h2>
+            <ul id="listaFavoritos">
+            </ul>        
+        </section>
+
+        <section id="atraccionesFavoritasContainer">
+            <h2>❤️ Atracciones Favoritas</h2>
+            <ul id="listaAtraccionesFavoritas"></ul>
+        </section>
+
+        <section id="historialContainer">
+            <h2>🕘 Historial de búsquedas</h2>
+            <ul id="listaHistorial"> </ul>
+        </section>
+        </main>
+
+
+
+    <div id="loginContainer">
+    <div id="loginCard">
+        <h2>🌍 Travel Planner Pro</h2>
+        <p>Bienvenido viajero</p>
+        <input
+            type="text"
+            id="inputNombre"
+            placeholder="Ingresa tu nombre">
+        <button id="btnIngresar">
+            Ingresar
+        </button>
+    </div>
+</div>
+
+<script src="/Scripts/script.js"></script>
+</body>
+</html>
